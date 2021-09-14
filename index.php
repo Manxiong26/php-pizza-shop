@@ -189,19 +189,19 @@ define('NAME', 'Wolfy');
 //         }
 
 //comparison booleans (true or false )
-//echo 5 > 10;
-//echo 5 == 10;
-//echo 10 == 10;
-//echo 5 != 10;
-//echo 5 <= 5;
-//echo 5 >= 5;
+    //echo 5 > 10;
+    //echo 5 == 10;
+    //echo 10 == 10;
+    //echo 5 != 10;
+    //echo 5 <= 5;
+    //echo 5 >= 5;
 
 //strings
-//echo 'Ellie' < 'Ashi';
-//echo 'Ellie' > 'Ashi';
-//echo 'Ellie' > 'ellie';
-//echo 'Ellie' == 'Ellie';
-//echo 'ellie' == 'Ellie';
+    //echo 'Ellie' < 'Ashi';
+    //echo 'Ellie' > 'Ashi';
+    //echo 'Ellie' > 'ellie';
+    //echo 'Ellie' == 'Ellie';
+    //echo 'ellie' == 'Ellie';
 
 //loose vs strict equal comparison
 //echo true; "1"
@@ -219,8 +219,30 @@ define('NAME', 'Wolfy');
     //will come out false because one is a number and one is a string.
         //echo 5 === '5';
 
-echo true == "1";
-echo false == "";
+    // echo true == "1";
+    // echo false == "";
+
+//conditional statement
+    //if else statement
+        // $price = 20;
+        // if($price < 10){
+        //     echo 'the condition is met';
+        // } elseif ($price < 30 ){
+        //     echo 'elseif condition met';
+        // }else {
+        //     echo 'condition not met';
+        // }
+    // foreach loop with if else statement 
+        // foreach( $products as $product){
+            //this is using AND(&&)
+            // if($product['price'] < 15 && $product['price'] > 2){
+            //     echo $product['name'] . '<br />';
+            // }
+            //this is using OR(||)
+        //     if($product['price'] > 20 || $product['price'] < 10){
+        //         echo $product['name'] . '<br />';
+        //     }
+        // }
 ?>
 
 <!DOCTYPE html>
@@ -251,5 +273,15 @@ echo false == "";
         
         
     </ul> -->
+
+    <div>
+        <ul>
+            <?php foreach( $products as $product ){?>
+            <?php if($product['price'] > 15){?> 
+            <li><?php echo $product['name'] ?></li>
+            <?php } ?>
+            <?php } ?> 
+        </ul>
+    </div>
     </body>
 </html>
