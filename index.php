@@ -187,6 +187,40 @@ define('NAME', 'Wolfy');
 //             echo '<br />';
 //             $i++;
 //         }
+
+//comparison booleans (true or false )
+//echo 5 > 10;
+//echo 5 == 10;
+//echo 10 == 10;
+//echo 5 != 10;
+//echo 5 <= 5;
+//echo 5 >= 5;
+
+//strings
+//echo 'Ellie' < 'Ashi';
+//echo 'Ellie' > 'Ashi';
+//echo 'Ellie' > 'ellie';
+//echo 'Ellie' == 'Ellie';
+//echo 'ellie' == 'Ellie';
+
+//loose vs strict equal comparison
+//echo true; "1"
+//echo false; ""
+
+//loose equal comparison
+//when comparing == we dont take into consideration any type of data type
+    //this doesn't consider if data is a number or a string it will still 
+    //come out true since they're technically both 5.    
+        //echo 5 == '5';
+
+//strict comparison 
+//when comparing === we do take into consideration data type 
+    //this does consider if data type is a number or a string so the answer
+    //will come out false because one is a number and one is a string.
+        //echo 5 === '5';
+
+echo true == "1";
+echo false == "";
 ?>
 
 <!DOCTYPE html>
@@ -207,7 +241,7 @@ define('NAME', 'Wolfy');
     <?php echo $age; ?>    
     </div> -->
     <h1>Products</h1>
-    <ul>
+    <!-- <ul>
         <?php
         foreach($products as $product ){ ?>
         <h3><?php echo $product['name']; ?></h3>
@@ -216,6 +250,6 @@ define('NAME', 'Wolfy');
     <?php } ?>
         
         
-    </ul>
+    </ul> -->
     </body>
 </html>
