@@ -243,6 +243,22 @@ define('NAME', 'Wolfy');
         //         echo $product['name'] . '<br />';
         //     }
         // }
+
+//Break 
+    //when name hits lightening bolt it breaks and does not iterate the rest 
+        foreach($products as $product){
+            if($product['name'] === 'lightening bolt'){
+                break;
+            }
+            //if the price is greater than 15 we'll jump up to the next one 
+            if($product['price'] > 15 ){
+                continue;
+            }
+            echo $product['name'] . '<br />';
+        }
+
+
+
 ?>
 
 <!DOCTYPE html>
