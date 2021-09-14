@@ -71,8 +71,82 @@ define('NAME', 'Wolfy');
     //move it up to the nearest interger 
     //echo ceil($pi);
     //built in pi
-    echo pi();
+    //echo pi();
 
+//Arrays
+    //indexed arrays 
+    //there are 2 different ways of creating an indexed array
+    $peopleOne = ['MaNeena', 'Ellie', 'Ashi'];
+
+    //echo $peopleOne[0];
+
+    $peopleTwo = array('William', 'MaNeena', 'Ellie', 'Ashi');
+
+    $ageOne = [20, 30, 40, 50];
+    //if you want to see an array in a readable form
+        //print_r($ageOne);
+
+        //if you want to change the value of one the data
+        $ageOne[1] = 25;
+        //print_r($ageOne)
+        //adding a new index
+        $ageOne[] = 60;
+        //print_r($ageOne);
+
+        //another way to add to the end of an array 
+        array_push($ageOne, 70);
+        //print_r($ageOne);
+
+        //how to count the element in an array 
+        //echo count($ageOne);
+
+        //merging two array 
+        $peopleThree = array_merge($peopleOne, $peopleTwo);
+       // print_r($peopleThree);
+
+    //associative arrays 
+
+    //uses keys instead of indexes
+    //keys & value pairs
+    $MaNeenaOne = ['Ellie'=>'cute', 'Ashi'=>'siberian', 'William'=>'Husband'];
+   // echo $MaNeenaOne['Ellie'];
+    //print_r($MaNeenaOne);
+
+    $MaNeenaTwo = array('happy'=>'sad', 'Look'=>'Good');
+    //print_r($MaNeenaTwo);
+
+    //adding to the array 
+    $MaNeenaTwo['Nice'] = 'mean';
+    //print_r($MaNeenaTwo)
+
+    //overriding an element 
+    $MaNeenaTwo['Nice'] = 'bad';
+    //print_r($MaNeenaTwo);
+
+    //counting 
+    //echo count($MaNeenaTwo);
+
+    //merging 
+    $MaNeenaThree = array_merge($MaNeenaOne, $MaNeenaTwo);
+    //print_r($MaNeenaThree);
+
+    //multi-dimensional arrays
+        //using index array for blogs but inside of the blogs each individual array is an associative array
+    $blogs = [
+
+        ['title'=>'Ellie Party', 'author'=>'Ellie', 'content'=>'lorem', 'likes'=>30 ],
+        ['title'=>'Ashi Life', 'author'=>'Ashi', 'content'=>'lorem', 'likes'=>25 ],
+        ['title'=>'MaNeena happy', 'author'=>'MaNeena', 'content'=>'lorem', 'likes'=>50 ],
+    ];
+    //print_r($blogs[1][1]);
+    //echo $blogs[2]['author'];
+    //echo count($blogs)
+    $blogs[] = ['title'=>'William life', 'author'=>'William', 'content'=>'lorem', 'likes'=>'2'];
+    //print_r($blogs);
+
+    //remove the last of the array 
+    $popped = array_pop($blogs);
+    print_r($popped);
 ?>
 
 <!DOCTYPE html>
