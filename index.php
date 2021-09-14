@@ -13,6 +13,37 @@ define('NAME', 'Wolfy');
      //---- echo $name; ----
      $age = '28';
      //$name = 'Wolfy';
+
+//data strings
+    $stringOne = 'my email is ';
+    $stringTwo = 'xiong.maneena@gmail.com';
+
+    //concatenating 
+    //echo $stringOne . $stringTwo;
+
+    $name = 'MaNeena';
+
+    //echo 'Hey my name is ' . $name
+
+    //difference is when we use "" can output the variable while '' cannot output the variable
+
+    //echo "the MaNeena screamed \"ahhhh\"";
+    //echo 'the MaNeena screamed "ahhhhh"';
+
+    //echo $name[1]
+
+    //function 
+
+    //this will find the length of the string
+        echo strlen($name);
+   //show the string in all uppercase 
+        echo strtoupper($name);
+    //show the string in lower case 
+        echo strtolower($name);
+    //replace certain things in a string 
+    //everytime there's a M in the string $name it will be replaced by W
+        echo str_replace('M', 'W', $name);
+
 ?>
 
 <!DOCTYPE html>
