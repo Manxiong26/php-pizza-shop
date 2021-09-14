@@ -246,19 +246,37 @@ define('NAME', 'Wolfy');
 
 //Break 
     //when name hits lightening bolt it breaks and does not iterate the rest 
-        foreach($products as $product){
-            if($product['name'] === 'lightening bolt'){
-                break;
-            }
+        // foreach($products as $product){
+        //     if($product['name'] === 'lightening bolt'){
+        //         break;
+        //     }
             //if the price is greater than 15 we'll jump up to the next one 
-            if($product['price'] > 15 ){
-                continue;
-            }
-            echo $product['name'] . '<br />';
-        }
+        //     if($product['price'] > 15 ){
+        //         continue;
+        //     }
+        //     echo $product['name'] . '<br />';
+        // }
+//Functions
+// set a local variable in the parameter and set it a default value 
+    function sayHello($name = 'MaNeena', $time = 'Morning'){
+        echo "Good $time $name";
+    }
+    //calling the function 
+    //now you can pass new values to the local variable and if there's 
+    //none it goes to default
+        //sayHello();
+        sayHello('Ellie', 'Night');
 
+    function formatProduct($product){
+        //everything inside the curly braces is gonna be a variable 
+        //echo "{$product['name']} costs $ {$product['price']} to buy <br />";
+        return "{$product['name']} costs $ {$product['price']} to buy <br />";
+    }
+    //storing the value in a variable
+    // $formatted = formatProduct(['name'=>'gold star', 'price'=> 20]);
+    // echo $formatted;
 
-
+    //passing multiple different argument and accepting multiple parameters  
 ?>
 
 <!DOCTYPE html>
@@ -290,7 +308,7 @@ define('NAME', 'Wolfy');
         
     </ul> -->
 
-    <div>
+    <!-- <div>
         <ul>
             <?php foreach( $products as $product ){?>
             <?php if($product['price'] > 15){?> 
@@ -298,6 +316,6 @@ define('NAME', 'Wolfy');
             <?php } ?>
             <?php } ?> 
         </ul>
-    </div>
+    </div> -->
     </body>
 </html>
