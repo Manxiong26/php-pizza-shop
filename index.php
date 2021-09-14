@@ -146,7 +146,47 @@ define('NAME', 'Wolfy');
 
     //remove the last of the array 
     $popped = array_pop($blogs);
-    print_r($popped);
+    //print_r($popped);
+
+//loops 
+        //for($i=0; $i<5; $i++){
+            //echo 'some template';
+        //}
+    //for each loop
+        //foreach( $blogs as $blogs ){
+            // echo 'some template';
+        //}
+
+    $Ellie = ['cute', 'small', 'adorable'];
+    // for($i = 0; $i < count($Ellie); $i++){
+    //     echo $Ellie[$i] . '<br />';
+    // }
+//For Loop
+    // foreach($Ellie as $Ell ){
+    //     echo $Ell . '<br />';
+    // }
+
+    $products = [
+        ['name' => 'shiny star', 'price' => 20 ],
+        ['name' => 'green shell', 'price' => 10 ],
+        ['name' => 'red shell', 'price' => 15 ],
+        ['name' => 'gold coin', 'price' => 5 ],
+        ['name' => 'lightening bolt', 'price' => 40 ],
+        ['name' => 'banana skin', 'price' => 2 ],
+    ];
+//foreach Loop
+    // foreach($products as $product ){
+    //     echo $product['name'] . ' - ' . $product['price'];
+    //     echo '<br />';
+    // }
+
+//While Loop
+// $i = 0;
+//         while($i < count($products)){
+//             echo $products[$i]['name'];
+//             echo '<br />';
+//             $i++;
+//         }
 ?>
 
 <!DOCTYPE html>
@@ -158,13 +198,24 @@ define('NAME', 'Wolfy');
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-    <h1>
+    <!-- <h1>
         <?php 
     echo "MaNeena's Pizza Shoppe";
     ?> </h1>
     <div><?php echo NAME;  ?></div>
     <div>
     <?php echo $age; ?>    
-    </div>
+    </div> -->
+    <h1>Products</h1>
+    <ul>
+        <?php
+        foreach($products as $product ){ ?>
+        <h3><?php echo $product['name']; ?></h3>
+        <p>$ <?php echo $product['price']; ?></p>
+
+    <?php } ?>
+        
+        
+    </ul>
     </body>
 </html>
