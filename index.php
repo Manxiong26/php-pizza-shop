@@ -265,7 +265,7 @@ define('NAME', 'Wolfy');
     //now you can pass new values to the local variable and if there's 
     //none it goes to default
         //sayHello();
-        sayHello('Ellie', 'Night');
+        //sayHello('Ellie', 'Night');
 
     function formatProduct($product){
         //everything inside the curly braces is gonna be a variable 
@@ -276,7 +276,43 @@ define('NAME', 'Wolfy');
     // $formatted = formatProduct(['name'=>'gold star', 'price'=> 20]);
     // echo $formatted;
 
-    //passing multiple different argument and accepting multiple parameters  
+    //Variable scope 
+    //function myFunc(){
+        //local scope is only available inside the function and cant use it outside
+        //$price = 10;
+        //echo $price;
+    //}
+    //myFunc();
+
+    //still local scope
+    //function myFunctionTwo($age){
+      //  echo $age;
+    //}
+    //myFunctionTwo(25);
+
+    //global variable 
+    $name2 = 'Ellie';
+
+    //function sayYo(){
+        //need to call global before the variable to use the global variable
+    //    global $name2;
+        // when you change the variable inside the function it changes the 
+        //global one as well
+     //   $name2 = 'Ashi';
+    //     echo "hello $name2";
+    // }
+    //sayYo();
+    //echo $name2;
+        
+    //when you use the & before the parameter then you can override it 
+    function sayBye(&$name2){
+        //when you pass a parameter inside a function it's a local 
+        //variable only and does not override the global variable 
+        $name2 = 'Ashi';
+        echo "bye $name2";
+    }
+    sayBye($name2);
+    echo $name2;
 ?>
 
 <!DOCTYPE html>
