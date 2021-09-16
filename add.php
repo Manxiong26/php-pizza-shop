@@ -3,10 +3,10 @@
 //checking if there's a GET request set
 //this is the GET method
 //this method isn't as secure cause it shows info on the URL 
-// if (isset($_POST['submit'])){
-//     echo $_POST['email'];
+ //if (isset($_POST['submit'])){
+ //    echo $_POST['email'];
 //     echo $_POST['title'];
-//     echo $_POST['ingredients'];
+ //    echo $_POST['ingredients'];
 // }
 
 //this is the POST method
@@ -19,22 +19,41 @@ if (isset($_POST['submit'])){
     if(empty($_POST['email'])){
         echo "An email is required <br />";
     } else {
-        echo htmlspecialchars($_POST['email']);
+         //echo htmlspecialchars($_POST['email']);
+        $email = $_POST['email'];
+        //built-in php filter --checking if it is a valid email 
+        // ! reverse not true fire error
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            ECHO 'Email must be a valid email address';
+        }
     }
+
     //check title
     if(empty($_POST['title'])){
-        echo "An title is required <br />";
+        echo "A title is required <br />";
     } else {
-        echo htmlspecialchars($_POST['title']);
+        //echo htmlspecialchars($_POST['title']);
+        $title = $_POST['title'];
+        //checking for lowercase, uppercase expression or spaces as many times and atleast once 
+        //checking the Title itself and that's what we're checking it with 
+        if(!preg_match('/^[a-zA-Z\s]+$/', $title)){
+            echo 'Titles must be letters and spaces only';
+        }
     }
     //check ingredient
-    if(empty($_POST['ingredient'])){
-        echo "Atleast one ingredient is required <br />";
+    if(empty($_POST['ingredients'])){
+       echo "At-least one ingredient is required <br />";
     } else {
-        echo htmlspecialchars($_POST['ingredient']);
+        //echo htmlspecialchars($_POST['ingredients']);
+        $ingredients = $_POST['ingredients'];
+        //this checks for a comma separated list of words 
+        //these are called reject
+        if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $ingredients)){
+            echo 'Ingredients must be a comma separated list';
+        }
     }
 }
-//end Post 
+//end Post and check 
 
 ?>
 
