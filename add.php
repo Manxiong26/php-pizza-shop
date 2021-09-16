@@ -14,10 +14,27 @@
 if (isset($_POST['submit'])){
     //htmlspecialchars converts actual entities into html entities is a safe special characters which makes it safe 
     //this protects from malicious attacker and it doesn't redirect you to dangerous websites 
-    echo htmlspecialchars($_POST['email']);
-    echo htmlspecialchars($_POST['title']);
-    echo htmlspecialchars($_POST['ingredients']);
+    
+    //check email 
+    if(empty($_POST['email'])){
+        echo "An email is required <br />";
+    } else {
+        echo htmlspecialchars($_POST['email']);
+    }
+    //check title
+    if(empty($_POST['title'])){
+        echo "An title is required <br />";
+    } else {
+        echo htmlspecialchars($_POST['title']);
+    }
+    //check ingredient
+    if(empty($_POST['ingredient'])){
+        echo "Atleast one ingredient is required <br />";
+    } else {
+        echo htmlspecialchars($_POST['ingredient']);
+    }
 }
+//end Post 
 
 ?>
 
