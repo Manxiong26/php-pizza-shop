@@ -12,9 +12,11 @@
 //this is the POST method
 //this method is more secure because it doesn't show on the URL 
 if (isset($_POST['submit'])){
-    echo $_POST['email'];
-    echo $_POST['title'];
-    echo $_POST['ingredients'];
+    //htmlspecialchars converts actual entities into html entities is a safe special characters which makes it safe 
+    //this protects from malicious attacker and it doesn't redirect you to dangerous websites 
+    echo htmlspecialchars($_POST['email']);
+    echo htmlspecialchars($_POST['title']);
+    echo htmlspecialchars($_POST['ingredients']);
 }
 
 ?>
