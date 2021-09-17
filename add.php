@@ -59,6 +59,20 @@ if (isset($_POST['submit'])){
             $errors['ingredients'] = 'Ingredients must be a comma separated list';
         }
     }
+
+    //if there's no error redirect to the home page else stay on page
+    // array_filter function works to cycle through the array and performs a callback function 
+    //defining the call back function 
+    if(array_filter($errors)){
+        //echo 'errors in the form';
+        //do nothing if there's an error
+    }else {
+        //echo 'form is valid';
+        //this is where we redirect if there's no errors to the main page
+        header('Location: index.php');
+    }
+
+
 }
 //end Post and check 
 
