@@ -61,8 +61,8 @@ if (isset($_POST['submit'])){
     }
 
     //if there's no error redirect to the home page else stay on page
-    // array_filter function works to cycle through the array and performs a callback function 
-    //defining the call back function 
+    // array_filter function works to cycle through the array and performs a callback function to check for errors
+    //defining the call back function to check for errors
     if(array_filter($errors)){
         //echo 'errors in the form';
         //do nothing if there's an error
