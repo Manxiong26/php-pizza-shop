@@ -20,7 +20,14 @@ $result = mysqli_query($conn, $sql);
 //this is where we store the array 
 $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-print_r($pizzas)
+//free result from memory 
+mysqli_free_result($result);
+
+//close connection 
+mysqli_close($conn);
+
+//print the array
+print_r($pizzas);
 
 ?>
 
